@@ -18,7 +18,13 @@ export class UserService {
 
       delete user.password;
 
-      return user;
+      return {
+        status: true,
+        message: 'User fetched successfully',
+        data: {
+          ...user,
+        },
+      };
     } catch (error) {
       throw error;
     }
@@ -48,7 +54,13 @@ export class UserService {
       // return the updated user
       delete result.password;
 
-      return result;
+      return {
+        status: true,
+        message: 'User updated successfully',
+        data: {
+          ...result,
+        },
+      };
     } catch (error) {
       throw error;
     }
